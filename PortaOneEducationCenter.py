@@ -38,18 +38,19 @@ def find_unique_character(text):
                 word_counts[char.lower()] = 1
             else:
                 word_counts[char.lower()] += 1
-    print(word_counts)
+
     # шукаємо перший унікальний символ
     for word in text.split():
         for char in word:
             if word_counts[char.lower()] == 1:
                 return char
 
-    return None  # якщо не знайдено унікального символу
+    return 'There is no unique symbols'  # якщо не знайдено унікального символу
 
 
 # приклад використання
-input_text = """The Tao gave birth to machine language. Machine language gave birth
+input_text = input('Write your text: ')
+"""The Tao gave birth to machine language. Machine language gave birth
 to the assembler.
 The assembler gave birth to the compiler. Now there are ten thousand
 languages.
